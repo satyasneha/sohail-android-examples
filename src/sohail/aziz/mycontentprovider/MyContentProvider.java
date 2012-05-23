@@ -9,6 +9,15 @@ import android.database.sqlite.SQLiteQueryBuilder;
 import android.net.Uri;
 import android.util.Log;
 
+/*
+@author Vladimir Vivien (http://vladimirvivien.com/)
+* 
+*/
+/*
+* modified and updated by sohail aziz
+* http://www.sohailaziz.com
+* */
+
 public class MyContentProvider extends ContentProvider {
 
 	private MyDatabase mydb;
