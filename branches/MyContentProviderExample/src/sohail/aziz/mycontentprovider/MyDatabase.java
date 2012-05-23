@@ -17,6 +17,10 @@ import android.database.sqlite.SQLiteOpenHelper;
  * @author Vladimir Vivien (http://vladimirvivien.com/)
  * 
  */
+/*
+ * modified and updated by sohail aziz
+ * http://www.sohailaziz.com
+ * */
 public class MyDatabase extends SQLiteOpenHelper {
 
 	private static final String DATABASE_NAME = "munshi.db";
