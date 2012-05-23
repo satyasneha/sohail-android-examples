@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <TextView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/hello" />
+
+        <EditText
+            android:id="@+id/etID"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="ID" />
+
+        <EditText
+            android:id="@+id/etNAME"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="NAME" />
+
+        <CheckBox
+            android:id="@+id/cbStatus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Status" />
+
+        <LinearLayout 
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            >
+        <Button
+            android:id="@+id/btInsert"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Insert" />
+
+        <Button
+            android:id="@+id/btShow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="ShowAll" />
+
+        <Button
+            android:id="@+id/btShowRecent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Recent" />
+
+        <Button
+            android:id="@+id/btShowChecked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Checked" />
+
+        <Button
+            android:id="@+id/btDeleteAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Delete" />
+        
+        </LinearLayout>
+       
+
+        <ListView
+            android:id="@+id/lvList"
+            android:layout_width="wrap_content"
+            android:layout_height="fill_parent"
+            android:scrollbars="vertical" >
+        </ListView>
+    </LinearLayout>
