@@ -6,6 +6,14 @@ import android.content.UriMatcher;
 import android.net.Uri;
 import android.provider.BaseColumns;
 
+/*
+ @author Vladimir Vivien (http://vladimirvivien.com/)
+ * 
+ */
+/*
+ * modified and updated by sohail aziz
+ * http://www.sohailaziz.com
+ * */
 public class MyContentDescriptor {
 
 	public static final String AUTHORITY = "sohail.aziz.mycontentprovider";
@@ -17,7 +25,7 @@ public class MyContentDescriptor {
 	// define content mime type for entity
 	public static final String CONTENT_TYPE_DIR = "sohail.aziz.cursor.dir/sohail.aziz.munshi.app";
 	public static final String CONTENT_ITEM_TYPE = "sohail.aziz.cursor.item/sohail.aziz.munshi.app";
-	
+
 	private static UriMatcher buildUriMatcher() {
 		// TODO Auto-generated method stub
 		final UriMatcher matcher = new UriMatcher(UriMatcher.NO_MATCH);
@@ -25,16 +33,19 @@ public class MyContentDescriptor {
 		// have to add tables uri here
 		final String authority = AUTHORITY;
 
-		//adding category Uris
-		matcher.addURI(authority, Categories.CAT_PATH, Categories.CAT_PATH_TOKEN);
-		matcher.addURI(authority, Categories.CAT_PATH_FOR_ID,Categories.CAT_PATH_FOR_ID_TOKEN);
-		//adding transaction Uris
-		matcher.addURI(authority, Transactions.TRAN_PATH,Transactions.TRAN_PATH_TOKEN);
-		matcher.addURI(authority, Transactions.TRAN_PATH_FOR_ID, Transactions.TRAN_PATH_FOR_ID_TOKEN);
+		// adding category Uris
+		matcher.addURI(authority, Categories.CAT_PATH,
+				Categories.CAT_PATH_TOKEN);
+		matcher.addURI(authority, Categories.CAT_PATH_FOR_ID,
+				Categories.CAT_PATH_FOR_ID_TOKEN);
+		// adding transaction Uris
+		matcher.addURI(authority, Transactions.TRAN_PATH,
+				Transactions.TRAN_PATH_TOKEN);
+		matcher.addURI(authority, Transactions.TRAN_PATH_FOR_ID,
+				Transactions.TRAN_PATH_FOR_ID_TOKEN);
 
 		return matcher;
 	}
-	
 
 	public static class Categories {
 		// an identifying name for entity
@@ -59,9 +70,9 @@ public class MyContentDescriptor {
 		public static class Cols {
 
 			public static final String cat_id = BaseColumns._ID;
-			public static final String key_1_catid="id";
-			public static final String key_2_catname="name";
-			public static final String key_3_catstatus="status";
+			public static final String key_1_catid = "id";
+			public static final String key_2_catname = "name";
+			public static final String key_3_catstatus = "status";
 
 		}
 
@@ -80,16 +91,16 @@ public class MyContentDescriptor {
 		public static final Uri CONTENT_URI = BASE_URI.buildUpon()
 				.appendPath(TRAN_PATH).build();
 
-		//these cols should be equal to transaction's cols name key_1_...
+		// these cols should be equal to transaction's cols name key_1_...
 		public static class Cols {
 
 			public static final String tran_id = BaseColumns._ID;
-			public static final String key_1_username="username";
-			public static final String key_2_password="password";
-			public static final String key_3_catid="catid";
-			public static final String key_4_amount="amount";
-			public static final String key_5_type="type";
-			public static final String key_6_comment="comment";
+			public static final String key_1_username = "username";
+			public static final String key_2_password = "password";
+			public static final String key_3_catid = "catid";
+			public static final String key_4_amount = "amount";
+			public static final String key_5_type = "type";
+			public static final String key_6_comment = "comment";
 		}
 	}
 
