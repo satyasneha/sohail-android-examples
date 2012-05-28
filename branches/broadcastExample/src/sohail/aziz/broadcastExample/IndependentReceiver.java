@@ -10,7 +10,10 @@ public class IndependentReceiver extends BroadcastReceiver {
 	@Override
 	public void onReceive(Context context, Intent intent) {
 		// TODO Auto-generated method stub
-		Log.d("sohail","IndependentReceiver:onReceive Broadcast Received" );
+		
+		int recval = intent.getIntExtra("counter", 0);
+		Log.d("sohail", "independentreceiver: broadcast received with counter="+recval);
+		
 	}
 
 }

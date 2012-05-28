@@ -14,7 +14,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/btPause"
-        android:text="Pause"
+        android:text="Send_to_actvity_broadcast_and_ Pause"
+        />
+    
+    <Button 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btIpause"
+        android:text="Send_to_independent_broadcast_and_ Pause"
         />
 
 </LinearLayout>

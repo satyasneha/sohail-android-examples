@@ -18,7 +18,7 @@ public class BroadcastExampleActivity extends Activity implements
 	private Myreceiver reMyreceive;
 	private IntentFilter filter;
 	TextView tvMessage;
-	Button btPause;
+	Button btPause,btIpause;
 
 	@Override
 	protected void onPause() {
@@ -47,12 +47,15 @@ public class BroadcastExampleActivity extends Activity implements
 		Log.d("sohail", "onCreate called");
 
 		btPause = (Button) findViewById(R.id.btPause);
+		btIpause=(Button)findViewById(R.id.btIpause);
 		tvMessage = (TextView) findViewById(R.id.tvBroadcast);
+		
 		btPause.setOnClickListener(this);
+		btIpause.setOnClickListener(this);
 
 		reMyreceive = new Myreceiver();
 		filter = new IntentFilter("sohail.aziz");
-		registerReceiver(reMyreceive, filter);
+	//	registerReceiver(reMyreceive, filter);
 
 	
 
@@ -66,7 +69,7 @@ public class BroadcastExampleActivity extends Activity implements
 
 
 			int recval = intent.getIntExtra("counter", 0);
-			Log.d("sohail", "MyReceiver running: broadcast received with counter="+recval);
+			Log.d("sohail", "MyReceiver running inside activity: broadcast received with counter="+recval);
 		//	tvMessage.setText(recval);
 
 		}
@@ -81,6 +84,8 @@ public class BroadcastExampleActivity extends Activity implements
 		case R.id.btPause:
 			
 			Intent i = new Intent(this, MyIntentService.class);
+			//send broadcast to activity's receiver
+			i.putExtra("independent", false);
 			Log.d("sohail", "starting MyIntentservice");
 			startService(i);
 
@@ -88,6 +93,15 @@ public class BroadcastExampleActivity extends Activity implements
 			Intent ii = new Intent(getApplicationContext(),
 					receiverActivity.class);
 			startActivity(ii);
+			break;
+			
+		case R.id.btIpause:
+			
+			Intent j=new Intent(this,MyIntentService.class);
+			//send broadcast to independent receiver
+			j.putExtra("independent",true);
+			startService(j);
+			
 			break;
 		}
 
