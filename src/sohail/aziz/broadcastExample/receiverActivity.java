@@ -13,12 +13,13 @@ public class receiverActivity extends Activity{
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		
-		setContentView(R.layout.main);
+		setContentView(R.layout.secondactivity);
 		Log.d("sohail","receiverAtivity :oncreate");
-		Intent intnt=new Intent();
+
+		/*Intent intnt=new Intent();
 		intnt.setAction("sohail.aziz.r2");
 		Log.d("sohail","receiverAtivity :Sending Broadcast");
-		sendBroadcast(intnt,"MYPERMISSION");
+		sendBroadcast(intnt);*/
 		
 		
 		
