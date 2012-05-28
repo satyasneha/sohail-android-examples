@@ -6,14 +6,13 @@ import android.util.Log;
 
 public class MyIntentService extends IntentService {
 
-	int i;
-
+	
 	public MyIntentService() {
 		super("MyIntentService");
 		// TODO Auto-generated constructor stub
 
 		Log.d("sohail", "Myintentservice constructor");
-		i = 0;
+		
 	}
 
 	@Override
@@ -22,23 +21,32 @@ public class MyIntentService extends IntentService {
 
 		Log.d("sohail", "onHandle intent called");
 
-		while (i < 10) {
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
-			try {
-				Thread.sleep(1000);
-			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
+		boolean ind = arg0.getBooleanExtra("independent", false);
+
+		if (ind == true) { // send broadcast to independent receiver
+			
+			Intent in = new Intent();
+			in.setAction("sohail.aziz.r2");
+			in.putExtra("counter", 202);
+			Log.d("sohail", "onHandleIntent: sending broadcast");
+			sendBroadcast(in);
+
+		} else {
 
 			Intent in = new Intent();
 			in.setAction("sohail.aziz");
-			in.putExtra("counter", i);
+			in.putExtra("counter", 101);
 			Log.d("sohail", "onHandleIntent: sending broadcast");
 			sendBroadcast(in);
-			i++;
-		}
 
+		}
 	}
 
 }
