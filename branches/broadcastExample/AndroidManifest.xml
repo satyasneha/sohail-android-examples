@@ -24,8 +24,7 @@
         </activity>
 
         <receiver
-            android:name=".IndependentReceiver"
-            android:enabled="true" >
+            android:name=".IndependentReceiver">
             <intent-filter>
                 <action android:name="sohail.aziz.r2" />
             </intent-filter>
