@@ -30,13 +30,13 @@ public class ContactsEmailActivity extends Activity implements
 	/** Called when the activity is first created. */
 
 	private String groupName;
-	private Button back;
-	private Button home;
+//	private Button back;
+//	private Button home;
 	private ArrayList<Contact> list = new ArrayList<Contact>();
 
 	private ListView contactList;
-	private Spinner myspinner;
-	private Button btshow,btobject;
+//	private Spinner myspinner;
+//	private Button btshow,btobject;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -46,19 +46,22 @@ public class ContactsEmailActivity extends Activity implements
 		
 		setContentView(R.layout.main);
 		
-		myspinner = (Spinner)findViewById(R.id.spinner);
-		btshow= (Button)findViewById(R.id.btshow);
-		btobject=(Button)findViewById(R.id.btobject);
-		btshow.setOnClickListener(this);
-		btobject.setOnClickListener(this);
+	//	myspinner = (Spinner)findViewById(R.id.spinner);
+	//	btshow= (Button)findViewById(R.id.btshow);
+	//	btobject=(Button)findViewById(R.id.btobject);
+//		btshow.setOnClickListener(this);
+//		btobject.setOnClickListener(this);
 
-		ListView mylistview= (ListView)findViewById(R.id.contactsListViewMain);
+		contactList= (ListView)findViewById(R.id.contactsListViewMain);
 		
-		list.add(new Contact("sohail", "11111"));
-		list.add(new Contact("aziz", "122222"));
-		list.add(new Contact("akak", "33333333"));
-		list.add(new Contact("hassan", "4444444"));
-		list.add(new Contact("sohail", "66666666"));
+	
+		list.add(new Contact("Sohail","201","301","401"));
+		list.add(new Contact("Mohsen","202",null,"402"));
+		list.add(new Contact("Faraz","203","303",null));
+		list.add(new Contact("Junaid",null,"304","404"));
+		list.add(new Contact("Asim","205",null,null));
+	
+		
 		
 		Log.e("sohail", "contacts added in list");
 		Log.e("sohail", "initializing contactadapter");
@@ -66,9 +69,9 @@ public class ContactsEmailActivity extends Activity implements
 		ContactAdapter contadapter= new ContactAdapter(this, list);
 	
 		Log.e("sohail", "setting contactadapter");
-		//mylistview.setAdapter(contadapter);
+		contactList.setAdapter(contadapter);
 		
-		myspinner.setAdapter(contadapter);
+	//	myspinner.setAdapter(contadapter);
 		
 
 		//fetching contacts
@@ -138,7 +141,7 @@ public class ContactsEmailActivity extends Activity implements
 	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		
+	/*	
 		switch (v.getId()){
 		case R.id.btshow:
 			int index= myspinner.getSelectedItemPosition();
@@ -149,6 +152,7 @@ public class ContactsEmailActivity extends Activity implements
 			Toast.makeText(getApplicationContext(), cn.getContactName()+cn.getContactNum(), Toast.LENGTH_LONG).show();
 			break;
 		}
+		*/
 
 	}
 
