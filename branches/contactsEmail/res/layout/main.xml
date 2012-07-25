@@ -4,6 +4,7 @@
     android:layout_height="fill_parent"
     android:orientation="vertical" >
 
+    <!-- 
     <Spinner
         
         android:layout_width="fill_parent" 
@@ -11,13 +12,16 @@
         android:id="@+id/spinner"
         
         />
+    -->
     <ListView 
+        
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/contactsListViewMain"
+        
      
         />
-        
+     <!--    
       <Button 
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
@@ -32,4 +36,5 @@
           android:text="show by object"
           
           />
+      -->
 </LinearLayout>

@@ -1,23 +1,48 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical">
+    android:layout_height="wrap_content"
+    android:background="@color/White"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:weightSum="1" >
+
+    <!-- android:layout_weight=".55" -->
+
     <TextView
         android:id="@+id/contactname"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" 
-        android:background="@color/FloralWhite"        
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
         android:textColor="@color/Black"
-        
-        />
+        android:textSize="20dp"
+        android:width="0dp" />
 
-    <TextView
-        android:id="@+id/contactnum"
+    <ImageButton
+        android:id="@+id/ivMobilePhone"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@color/LightYellow"
-        android:textColor="@color/Gray"
+        android:layout_gravity="right|center_vertical"
+        android:layout_margin="10dp"
+        android:background="@drawable/default_button_mobile_phone"
+        android:visibility="gone" />
 
-        />
+    <ImageButton
+        android:id="@+id/ivOfficePhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_margin="10dp"
+        android:background="@drawable/default_button_office_phone"
+        android:visibility="gone" />
+
+    <ImageButton
+        android:id="@+id/ivPstnPhone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|center_vertical"
+        android:layout_margin="10dp"
+        android:background="@drawable/default_button_pstn_phone"
+        android:visibility="gone" />
 
 </LinearLayout>
