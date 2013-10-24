@@ -54,10 +54,10 @@ public class MyContentDescriptor {
 		// BASE_URI/restaurants - for list of restaurants
 		// BASE_URI/restaurants/* - retreive specific restaurant by id
 		// the toke value are used to register path in matcher (see above)
-		public static final String CAT_PATH = "categories";
+		public static final String CAT_PATH = "categories/";
 		public static final int CAT_PATH_TOKEN = 100;
 
-		public static final String CAT_PATH_FOR_ID = "categories/*";
+		public static final String CAT_PATH_FOR_ID = "categories/#";
 		public static final int CAT_PATH_FOR_ID_TOKEN = 200;
 
 		// creating contentUri accessible from outside
@@ -82,10 +82,10 @@ public class MyContentDescriptor {
 
 		public static final String TABLE_NAME = "transactions";
 
-		public static final String TRAN_PATH = "transactions";
+		public static final String TRAN_PATH = "transactions/";
 		public static final int TRAN_PATH_TOKEN = 300;
 
-		public static final String TRAN_PATH_FOR_ID = "transactions/*";
+		public static final String TRAN_PATH_FOR_ID = "transactions/#";
 		public static final int TRAN_PATH_FOR_ID_TOKEN = 400;
 
 		public static final Uri CONTENT_URI = BASE_URI.buildUpon()
